@@ -9,8 +9,8 @@ the HRI Researchers' Microcontroller Workshop held on Nov 7 2018 @ HRI-127 - Tex
 Instructors/Contributors
 -----------
 
-- Michael Van Eijnden - Instructor  [Github] (https://github.com/mickel1138)
-- Michael S. Williamson - Instructor [Github](https://github.com/fightingtexasaggie)
+- Michael Van Eijnden - Instructor [[Github](https://github.com/mickel1138)]
+- Michael S. Williamson - Instructor [[Github](https://github.com/fightingtexasaggie)]
 - Mark Besonen - Contributor
 
 ---
@@ -66,7 +66,7 @@ Step 1— Download and install the Arduino software
 Step 2— Open the Arduino Software
 - Start up the Arduino software. The icon should be in your Applications folder; the Arduino icon looks like a white “Figure-8” on a blue-green background
 
-Step 3- Configure the Arduino Software
+Step 3— Configure the Arduino Software
 - Add the necessary libraries (libraries are like “drivers”) to let the Arduino software know how to communicate with the ESP32 microcontroller and components we will be using
 - To add support for the ESP32 microcontroller, click on File -> Preferences 
 ![](images/arduino-fig2.png)
@@ -98,7 +98,7 @@ Step 2— Open the Arduino software
 - Start up the Arduino software. The installer should have left an Arduino icon on your desktop
 - After launching the software for the first time, you may see a Windows Security Alert dialog warning that “Windows Firewall has blocked some features of this program”; if so, click the “Allow access” button for this alert so that the Arduino software can download additional components it needs for the workshop
 
-Step 3- Configure the Arduino software (see Step 3 for Mac OS)
+Step 3— Configure the Arduino software (see Step 3 for Mac OS)
 
 ## If you run into problems…
 
