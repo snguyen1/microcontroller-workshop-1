@@ -21,16 +21,16 @@ Instructors/Contributors
 # Table of Contents
 
 <!-- TOC -->
-- [1.   Preparation](#preparation)
+- [1.   Preparation before the Workshop](#preparation-before-the-workshop)
     - [1.1  Tutorial Download](#tutorial-download)
-    - [1.2  Installation](#installation)
-        - [a.   Mac OS](#mac-os)
-        - [b.   Windows](#windows)
+    - [1.2  Installation of Microcontroller Software and Drivers](#installation-of-microcontroller-software-and-drivers)
+        - [a.   Mac OS](#for-mac-os)
+        - [b.   Windows](#for-windows)
 
 <!-- /TOC -->
 
 
-# Preparation
+# Preparation before the Workshop
 
 ## Tutorial Download
 ---------------------
@@ -59,9 +59,9 @@ git pull origin master
 If you don’t have a GitHub account, you may have to re-download the .zip
 archive from GitHub.
 
-## Installation
+## Installation of Microcontroller Software and Drivers
 
-### Mac OS
+### For Mac OS
 Step 1— Download and install the Arduino software
 - Visit https://www.arduino.cc/en/Main/Software and download the MacOS X version of the Arduino software installer
 - Install the software per the instructions at https://www.arduino.cc/en/Guide/MacOSX. Skip the last section of the installation instructions, i.e. the “Proceed with board specific instructions” portion
@@ -70,29 +70,31 @@ Step 2— Open the Arduino Software
 - Start up the Arduino software. The icon should be in your Applications folder; the Arduino icon looks like a white “Figure-8” on a blue-green background
 
 Step 3— Configure the Arduino Software
+ 
+#### (Same for both windows and mac)
+
 - Add the necessary libraries (libraries are like “drivers”) to let the Arduino software know how to communicate with the ESP32 microcontroller and components we will be using
 - To add support for the ESP32 microcontroller, click on File -> Preferences 
 ![](images/arduino-fig2.png)
-- Paste “https://dl.espressif.com/dl/package_esp32_index.json” (without the quotes) into the blank space next to “Additional Boards Manager URLs:" 
+
+- Paste “https://dl.espressif.com/dl/package_esp32_index.json” (without the quotes) into the blank space next to “Additional Boards Manager URLs:" then lick “OK” to return to the main Arduino software window.
 ![](images/arduino-fig3.png)
 
-- Click “OK” to return to the main Arduino software window.
 - Click on Tools -> Board: “Arduino/Genuine Uno -> Boards Manager…. 
 ![](images/arduino-fig4.png)
 
 - Type “esp32” (without the quotes) into the filter at the top of the Boards Manager dialog; you should see an “esp32 by Espressif Systems” option appear.
-Click on its “Install” button, and let the process run to completion; altogether it has to download about 150MB of additional data at this point so it will take several minutes; when this install is finished.
+Click on its “Install” button, and let the process run to completion; altogether it has to download about 150MB of additional data at this point so it will take several minutes; when this install is finished. Click the "Close" button once the install is completed.
 ![](images/arduino-fig5.png)
 
-- Click the “Close” button to return to the main Arduino software window
 - To add support for the various components we will be using, click on Tools -> Manage Libraries…,
-- Type “adafruit” (without the quotes) into the filter at the top of the Library Manager dialog; similar to adding support for the ESP32 microcontroller like in the last step
 ![](images/arduino-fig6.png)
+- Type “adafruit” (without the quotes) into the filter at the top of the Library Manager dialog; similar to adding support for the ESP32 microcontroller like in the last step
 - Find & Install the “Adafruit BME280 Library by Adafruit”, “Adafruit SSD1306 by Adafruit”, and “Adafruit Unified Sensor by Adafruit” libraries.
 - Update the filter text to “rtclib”, and install the “RTClib by Adafruit” library.
 - Click the “Close” button to return to the main Arduino software window
 
-### Windows
+### For Windows
 Step 1— Download and install the Arduino software
 - Visit https://www.arduino.cc/en/Main/Software and download the Windows version of the Arduino software installer depending on your system (Windows 7, 8 10, etc...)
 - Install the software per the instructions at https://www.arduino.cc/en/Guide/Window. Skip the last section of the installation instructions, i.e. the “Proceed with board specific instructions” portion
@@ -101,7 +103,7 @@ Step 2— Open the Arduino software
 - Start up the Arduino software. The installer should have left an Arduino icon on your desktop
 - After launching the software for the first time, you may see a Windows Security Alert dialog warning that “Windows Firewall has blocked some features of this program”; if so, click the “Allow access” button for this alert so that the Arduino software can download additional components it needs for the workshop
 
-Step 3— Configure the Arduino software (see Step 3 for Mac OS)
+Step 3— Configure the Arduino software (see Step 3 for Mac OS or click [here](#same-for-both-windows-and-mac))
 
 ## If you run into problems…
 
