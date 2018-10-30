@@ -13,8 +13,8 @@ Instructors/Contributors
 - Michael S. Williamson [[Github](https://github.com/fightingtexasaggie)]
 - Mark Besonen 
 - Mikell Smith
-- Joe Holland
-- Son Nguyen
+- Joe Holland [[Github](https://github.com/joevholland)]
+- Son Nguyen [[Github](https://github.com/snguyen1)]
 
 ---
 
@@ -29,35 +29,13 @@ Instructors/Contributors
 
 <!-- /TOC -->
 
-
 # Preparation before the Workshop
-
+If you are a workshop participant, please download the lesson material and follow the instruction before heading to the workshop.
 ## Tutorial Download
 ---------------------
 
-If you have a GitHub account, it is probably most convenient if you clone or
-fork the GitHub repository. You can clone the repository by running:
-
-```bash
-git clone https://github.com/snguyen1/microcontroller-workshop-1.git
-```
-
- If you are not familiar with git, you can download the repository as a .zip file by heading over
-to the GitHub repository (https://github.com/snguyen1/microcontroller-workshop-1) in
-your browser and click the green “Download” button in the upper right.
+ If you are not familiar with git, you can download the repository as a .zip file by clicking the green “Download” button in the upper right at the top of this page (https://github.com/snguyen1/microcontroller-workshop-1). 
 ![](images/github-download.png)
-
-Please note that we may add and improve the material until shortly before the
-tutorial session, and we recommend you to update your copy of the materials one
-day before the tutorials. If you have an GitHub account and cloned the
-repository via GitHub, you can sync your existing local repository with:
-
-```bash
-git pull origin master
-```
-
-If you don’t have a GitHub account, you may have to re-download the .zip
-archive from GitHub.
 
 ## Installation of Microcontroller Software and Drivers
 
