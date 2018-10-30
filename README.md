@@ -9,9 +9,12 @@ the HRI Researchers' Microcontroller Workshop held on Nov 7 2018 @ HRI-127 - Tex
 Instructors/Contributors
 -----------
 
-- Michael Van Eijnden - Instructor [[Github](https://github.com/mickel1138)]
-- Michael S. Williamson - Instructor [[Github](https://github.com/fightingtexasaggie)]
-- Mark Besonen - Contributor
+- Michael van den Eijnden [[Github](https://github.com/mickel1138)]
+- Michael S. Williamson [[Github](https://github.com/fightingtexasaggie)]
+- Mark Besonen 
+- Mikell Smith
+- Joe Holland
+- Son Nguyen
 
 ---
 
