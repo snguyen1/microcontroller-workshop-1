@@ -1,6 +1,8 @@
 
 HRI Microcontroller Workshop
 ================================
+##### (scroll down to see instructions)
+----
 This repository will contain the teaching material and other info associated with our Microcontroller tutorial at
 the HRI Researchers' Microcontroller Workshop held on Nov 7 2018 @ HRI-127 - Texas A&M University - Corpus Christi
 
