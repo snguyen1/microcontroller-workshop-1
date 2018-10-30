@@ -30,7 +30,7 @@ Instructors/Contributors
 <!-- /TOC -->
 
 # Preparation before the Workshop
-If you are a workshop participant, please download the lesson material and follow the instruction before heading to the workshop.
+If you are a workshop participant, please download the lesson material and follow the instructions to download and configure the Arduino software before heading to the workshop.
 ## Tutorial Download
 ---------------------
 
