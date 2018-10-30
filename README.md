@@ -11,7 +11,7 @@ Instructors/Contributors
 
 - Michael van den Eijnden [[Github](https://github.com/mickel1138)]
 - Michael S. Williamson [[Github](https://github.com/fightingtexasaggie)]
-- Mark Besonen 
+- Mark Besonen [[Github](https://github.com/verbage)]
 - Mikell Smith
 - Joe Holland [[Github](https://github.com/joevholland)]
 - Son Nguyen [[Github](https://github.com/snguyen1)]
