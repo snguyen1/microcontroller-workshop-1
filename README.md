@@ -19,12 +19,14 @@ This repository contains the teaching material and other info associated with th
 <!-- /TOC -->
 
 # Preparation before the Workshop
-If you are a workshop participant, please download the lesson material and follow the instructions to download and configure the Arduino software before heading to the workshop.
+If you are a workshop participant, please download:
+- The tutorial material in part 1.1
+- Install the software follow the instruction in part 1.2 (contact us if you need help)
 ## Tutorial Download
 ---------------------
 
-If you are not familiar with git, you can download the repository here: https://github.com/snguyen1/microcontroller-workshop-1/archive/master.zip
-If you are a Git user, you can clone the repository.
+If you are not familiar with git, you can download the repository by clicking here: https://github.com/snguyen1/microcontroller-workshop-1/archive/master.zip
+
 
 ## Installation of Microcontroller Software and Drivers
 
