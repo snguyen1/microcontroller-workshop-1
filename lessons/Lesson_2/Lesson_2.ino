@@ -28,10 +28,14 @@ void setup() {
   Serial.println(F("Begin Lesson 2"));
 
   Serial.println(F("Starting BME 280 Sensor"));
-  startSensor();
+  if (!startSensor()) {
+    return;
+  }
 
   Serial.println(F("Starting Real Time Clock"));
-  startRealTimeClock();
+  if (!startRealTimeClock()){
+    return;
+  }
 
   Serial.println(F("Current time is:"));
   printDateTime();

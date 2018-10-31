@@ -26,7 +26,9 @@ void setup() {
   Serial.println(F("Begin Lesson 1"));
 
   Serial.println(F("Starting BME 280 Sensor"));
-  startSensor();
+  if (!startSensor()) {
+    return;
+  }
 }
 
 void loop() {
@@ -52,10 +54,6 @@ void getValues() {
 
 void printValues() {
   Serial.println();
-  
-  Serial.print("Current Time = ");
-  Serial.print(measurements.datetime);
-  Serial.println(" UTC");
   
   Serial.print("Temperature = ");
   Serial.print(measurements.temperature);
