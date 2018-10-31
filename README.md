@@ -53,7 +53,7 @@ Step 3— Configure the Arduino Software
 #### (Same for both windows and mac)
 
 - Add the necessary libraries (libraries are like “drivers”) to let the Arduino software know how to communicate with the ESP32 microcontroller and components we will be using.
-- To add support for the ESP32 microcontroller, click on Arduino -> Preferences (under Mac OS X) or File -> Preferences (under Windows.
+- To add support for the ESP32 microcontroller, click on Arduino -> Preferences (Mac) or File -> Preferences (Windows).
 ![](images/arduino-fig2.png)
 
 - Paste “https://dl.espressif.com/dl/package_esp32_index.json” (without the quotes) into the blank space next to “Additional Boards Manager URLs:" then lick “OK” to return to the main Arduino software window.
