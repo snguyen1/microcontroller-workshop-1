@@ -53,13 +53,13 @@ Step 3— Configure the Arduino Software
 #### (Same for both windows and mac)
 
 - Add the necessary libraries (libraries are like “drivers”) to let the Arduino software know how to communicate with the ESP32 microcontroller and components we will be using.
-- To add support for the ESP32 microcontroller, click on File -> Preferences 
+- To add support for the ESP32 microcontroller, click on Arduino -> Preferences (under Mac OS X) or File -> Preferences (under Windows.
 ![](images/arduino-fig2.png)
 
 - Paste “https://dl.espressif.com/dl/package_esp32_index.json” (without the quotes) into the blank space next to “Additional Boards Manager URLs:" then lick “OK” to return to the main Arduino software window.
 ![](images/arduino-fig3.png)
 
-- Click on Tools -> Board: “Arduino/Genuine Uno -> Boards Manager…. 
+- Click on Tools -> Board: “Arduino/Genuine Uno” -> Boards Manager…. 
 ![](images/arduino-fig4.png)
 
 - Type “esp32” (without the quotes) into the filter at the top of the Boards Manager dialog, and you should see an “esp32 by Espressif Systems” option appear.  Click on its “Install” button, and let the process run to completion.  Altogether it has to download about 150MB of additional data at this point so it will take several minutes. Click the "Close" button once the install is completed.
