@@ -12,10 +12,10 @@
 #include "SD.h"
 #include "SPI.h"
 
-#define SEALEVELPRESSURE_HPA (1019.64)
+#define SEALEVELPRESSURE_HPA (1019.64) /* Sealevel pressure in millibar */
 
-Adafruit_BME280 bme; // BME280 Enviromental Sensor in I2C mode (default).
-RTC_DS3231 rtc;      // RTC DS3231 Real Time Clock.
+Adafruit_BME280 bme;                    // BME280 Enviromental Sensor in I2C mode (default).
+RTC_DS3231 rtc;                         // RTC DS3231 Real Time Clock.
 
 unsigned long delayTime = 1000; // Time to wait after each loop in milliseconds.
 

@@ -8,9 +8,9 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
 
-#define SEALEVELPRESSURE_HPA (1019.64)
+#define SEALEVELPRESSURE_HPA (1019.64) /* Sealevel pressure in millibar */
 
-Adafruit_BME280 bme; // BME280 Enviromental Sensor in I2C mode (default).
+Adafruit_BME280 bme;                    // BME280 Enviromental Sensor in I2C mode (default).
 
 unsigned long delayTime = 1000; // Time to wait after each loop in milliseconds.
 

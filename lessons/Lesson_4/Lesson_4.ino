@@ -132,11 +132,11 @@ void turnOnPinD4() {
 }
 
 void getValues() {
-    measurements.temperature = bme.readTemperature();
-    measurements.pressure = bme.readPressure() / 100.0F;
-    measurements.humidity = bme.readHumidity();
-    DateTime now = rtc.now();
-    snprintf(measurements.datetime, 20, "%d/%02d/%02d %02d:%02d:%02d", now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second());
+  measurements.temperature = bme.readTemperature();
+  measurements.pressure = bme.readPressure() / 100.0F;
+  measurements.humidity = bme.readHumidity();
+  DateTime now = rtc.now();
+  snprintf(measurements.datetime, 20, "%d/%02d/%02d %02d:%02d:%02d", now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second());
 }
 
 void saveValues() {
