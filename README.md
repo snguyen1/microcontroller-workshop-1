@@ -23,8 +23,8 @@ If you are a workshop participant, please download the lesson material and follo
 ## Tutorial Download
 ---------------------
 
-If you are not familiar with git, you can download the repository as a .zip file by clicking the green “Download” button in the upper right at the top of this page (https://github.com/snguyen1/microcontroller-workshop-1). 
-![](images/github-download.png)
+If you are not familiar with git, you can download the repository here: https://github.com/snguyen1/microcontroller-workshop-1/archive/master.zip
+If you are a Git user, you can clone the repository.
 
 ## Installation of Microcontroller Software and Drivers
 
