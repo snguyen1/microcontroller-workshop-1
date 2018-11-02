@@ -40,11 +40,13 @@ void setup() {
 
   Serial.println(F("Starting BME 280 Sensor"));
   if (!startSensor()) {
+    stopError();
     return;
   }
 
   Serial.println(F("Starting Real Time Clock"));
   if (!startRealTimeClock()){
+    stopError();
     return;
   }
 
@@ -53,6 +55,7 @@ void setup() {
 
   Serial.println(F("Starting SD Card Reader/Writer"));
   if (!startSdCard()) {
+    stopError();
     return;
   }
 
@@ -212,4 +215,17 @@ void turnOnBlueLED() {
 void turnOffBlueLED() {
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, LOW);
+}
+
+void stopError() {
+  while (1) {
+    turnOnBlueLED();
+    delay(100);
+    turnOffBlueLED();
+    delay(100);
+    turnOnBlueLED();
+    delay(100);
+    turnOffBlueLED();
+    delay(800);
+  }
 }

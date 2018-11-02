@@ -27,6 +27,7 @@ void setup() {
 
   Serial.println(F("Starting BME 280 Sensor"));
   if (!startSensor()) {
+    stopError();
     return;
   }
 }
@@ -68,4 +69,27 @@ void printValues() {
   Serial.println(" %");
   
   Serial.println();
+}
+
+void turnOnBlueLED() {
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);
+}
+
+void turnOffBlueLED() {
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW);
+}
+
+void stopError() {
+  while (1) {
+    turnOnBlueLED();
+    delay(100);
+    turnOffBlueLED();
+    delay(100);
+    turnOnBlueLED();
+    delay(100);
+    turnOffBlueLED();
+    delay(800);
+  }
 }

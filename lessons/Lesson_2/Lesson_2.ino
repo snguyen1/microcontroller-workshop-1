@@ -29,11 +29,13 @@ void setup() {
 
   Serial.println(F("Starting BME 280 Sensor"));
   if (!startSensor()) {
+    stopError();
     return;
   }
 
   Serial.println(F("Starting Real Time Clock"));
   if (!startRealTimeClock()){
+    stopError();
     return;
   }
 
@@ -100,4 +102,27 @@ void printDateTime() {
   char datetime[20];
   snprintf(datetime, 20, "%d/%02d/%02d %02d:%02d:%02d UTC", now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second());
   Serial.println(datetime);
+}
+
+void turnOnBlueLED() {
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);
+}
+
+void turnOffBlueLED() {
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW);
+}
+
+void stopError() {
+  while (1) {
+    turnOnBlueLED();
+    delay(100);
+    turnOffBlueLED();
+    delay(100);
+    turnOnBlueLED();
+    delay(100);
+    turnOffBlueLED();
+    delay(800);
+  }
 }
