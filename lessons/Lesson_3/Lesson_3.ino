@@ -7,17 +7,27 @@
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
+#if __has_include(<Adafruit_SSD1306.h>) && __has_include(<Adafruit_GFX.h>)
+#include <Adafruit_SSD1306.h>
+#include <Adafruit_GFX.h>
+#endif
 #include "RTClib.h"
 #include "FS.h"
 #include "SD.h"
 #include "SPI.h"
 
 #define SEALEVELPRESSURE_HPA (1019.64) /* Sealevel pressure in millibar */
+#define uS_TO_S_FACTOR 1000000         /* Conversion factor for micro seconds to seconds */
+#define TIME_TO_SLEEP  10              /* Time ESP32 will go to sleep (in seconds) */
+#define D4 4                           /* Digital input GPIO 4, which powers our sensors. */
+#define OLED_RESET 4                   /* External VCC pin for display */
 
 Adafruit_BME280 bme;                    // BME280 Enviromental Sensor in I2C mode (default).
+#ifdef Adafruit_SSD1306
+Adafruit_SSD1306 display(OLED_RESET);   // SSD1306 128x32 OLED Display.
+#endif
 RTC_DS3231 rtc;                         // RTC DS3231 Real Time Clock.
-
-unsigned long delayTime = 1000; // Time to wait after each loop in milliseconds.
+RTC_DATA_ATTR boolean firstBoot = true; // Is this the first time we started?
 
 struct MSR {
   float temperature;
@@ -29,6 +39,9 @@ struct MSR {
 void setup() {
   Serial.begin(115200);
   Serial.println(F("Begin Lesson 3"));
+
+  Serial.println(F("Turning on D4 to power devices"));
+  turnOnPinD4();
 
   Serial.println(F("Starting BME 280 Sensor"));
   if (!startSensor()) {
@@ -50,13 +63,29 @@ void setup() {
     stopError();
     return;
   }
+
+  Serial.println(F("Starting the Display"));
+  startDisplay();
+
+  // Is this the first time we started?
+  if(firstBoot) {
+    firstBoot = false;
+    Serial.println(F("I just started up..."));
+  } else {
+    Serial.println(F("I AM AWAKE!"));
+  }
+
+  turnOnBlueLED();
+  getValues();
+  displayValues();
+  printValues();
+  saveValues();
+  turnOffBlueLED();
+  goToSleep();
 }
 
 void loop() {
-  getValues();
-  printValues();
-  saveValues();
-  delay(delayTime);
+  // I don't run anymore in DEEP SLEEP mode.
 }
 
 bool startSensor() {
@@ -91,6 +120,31 @@ bool startSdCard() {
   return true;
 }
 
+#ifdef Adafruit_SSD1306
+void startDisplay() {
+  // initialize with the I2C addr 0x3C (for the 128x32)
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+  display.clearDisplay();
+}
+#else
+void startDisplay() {
+  Serial.println(F("SSD1306 library not installed!"));
+}
+#endif
+
+void goToSleep() {
+  Serial.println(F("Going to Sleep!"));
+  delay(100); // Wait a little to make sure everything is done.
+  esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
+  esp_deep_sleep_start();
+}
+
+void turnOnPinD4() {
+  pinMode(D4, OUTPUT);
+  digitalWrite(D4, HIGH);
+  delay(200); //Wait a little bit for the pin to stabilize.
+}
+
 void getValues() {
   measurements.temperature = bme.readTemperature();
   measurements.pressure = bme.readPressure() / 100.0F;
@@ -101,7 +155,7 @@ void getValues() {
 
 void saveValues() {
   char message[100];
-  snprintf(message, 300, "%s,%f,%f,%f\n", measurements.datetime, measurements.temperature, measurements.pressure, measurements.humidity);
+  snprintf(message, 300, "%s,%.2f,%.2f,%.2f\n", measurements.datetime, measurements.temperature, measurements.pressure, measurements.humidity);
   writeToFile(SD, "/data.csv", message);
 }
 
@@ -127,6 +181,25 @@ void printValues() {
   Serial.println();
 }
 
+#ifdef Adafruit_SSD1306
+void displayValues() {
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0,0);
+  display.println(measurements.datetime);
+  display.setCursor(0,8);
+  display.println("Temperature=" + String(measurements.temperature) + (char)247 +"C");
+  display.setCursor(0,16);
+  display.println("Pressure=" + String(measurements.pressure) + "hPa");
+  display.setCursor(0,24);
+  display.println("Humidity=" + String(measurements.humidity) + "%");
+  display.display();
+}
+#else
+void displayValues() {}
+#endif
+
 void printDateTime() {
   DateTime now = rtc.now();
   char datetime[20];
@@ -134,12 +207,13 @@ void printDateTime() {
   Serial.println(datetime);
 }
 
-void writeToFile(fs::FS &fs, const char * path, const char * message){
+void writeToFile(fs::FS &fs, const char * path, const char * message) {
   Serial.printf("Writing to file: %s\n", path);
 
   File file = fs.open(path, FILE_APPEND);
   if(!file){
       File file = fs.open(path, FILE_WRITE);
+      file.print("time,temperature,pressure,humidity\n");
   }
   if(file.print(message)){
       Serial.println("File Write Success");
