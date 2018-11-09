@@ -32,11 +32,11 @@ If you are not familiar with git, you can download the repository by clicking he
 
 ### For Mac OS
 Follow this link to get the instruction for MacOS:
-https://tamucc-my.sharepoint.com/:w:/g/personal/son_nguyen_tamucc_edu/EQHyfUtWUJJBvDsHTBcFGtEBp8CA1q4SG4l5WeHHRMeArQ?e=gsGwrs
+https://github.com/snguyen1/microcontroller-workshop-1/blob/master/Install-MacOS.pdf
 
 ### For Windows
 Follow this link to get the instruction for Windows:
-https://tamucc-my.sharepoint.com/:w:/g/personal/son_nguyen_tamucc_edu/EbCVf4yFAVxNkmQA0GaB_QwBCktlgBjBexgZOnRqdxloPQ?e=ie7K9W
+https://github.com/snguyen1/microcontroller-workshop-1/blob/master/Install-Windows.pdf
 ## If you run into problems…
 
 If you run into problems, please visit either Mickel van den Eijnden or Michael Williamson in HRI 310, or Mark Besonen in HRI 215B, for a hand. Otherwise, congratulations, your computer is now ready for the microcontroller workshop!
