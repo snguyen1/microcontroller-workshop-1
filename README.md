@@ -39,7 +39,7 @@ Follow this link to get the instruction for Windows:
 https://github.com/snguyen1/microcontroller-workshop-1/blob/master/Install-Windows.pdf
 ## If you run into problems…
 
-If you run into problems, please visit either Mickel van den Eijnden or Michael Williamson in HRI 310, or Mark Besonen in HRI 215B, for a hand. Otherwise, congratulations, your computer is now ready for the microcontroller workshop!
+Please contact Son Nguyen at son.nguyen@tamucc.edu
 
 ------------
 
